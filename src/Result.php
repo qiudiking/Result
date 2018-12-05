@@ -13,6 +13,7 @@ class Result {
 
 	protected $data;
 	protected static $instance = null;
+	protected $fds;
 
 	public function __construct() {
 		$this->init();
@@ -48,6 +49,22 @@ class Result {
 
 	public function setRequestId($id){
 	    $this->data['_request_id']=$id;
+	}
+
+	/**
+	 * @param $fd
+	 */
+	public function setFds( $fd )
+	{
+		$this->fds = $fd;
+	}
+
+	/**
+	 * @return mixed
+	 */
+	public function getFd()
+	{
+		return $this->fds;
 	}
 
 
